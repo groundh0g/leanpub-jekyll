@@ -39,4 +39,4 @@ Some more text here ...
 
 {% include_relative copyright.md %}
 
-<script src='{{ "/assets/script/3rd-party/parallax.js" | relative_url }}'></script>
+<script src='{{ "/assets/script/3rd-party/parallax.js" | absolute_path }}'></script>
