@@ -5,7 +5,7 @@ title: The Book
 
 Welcome to the status page for my book. Scroll down to see a summary of the plot and to catch up on the latest progress being made on this project.
 
-<div class="parallax-window" style="min-height:200px;" data-parallax="scroll" data-image-src='{{ page.dir | append: "images/book-single-scroll.jpg" | relative_url }}'></div><br/>
+<div class="parallax-window" style="min-height:200px;" data-parallax="scroll" data-image-src='{{ page.dir | append: "images/book-single-scroll.jpg" }}'></div><br/>
 
 {% include_relative fluff.md %}
 
