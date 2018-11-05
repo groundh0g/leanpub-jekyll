@@ -3,11 +3,6 @@ page: page
 title: The Book
 ---
 
-* {{ "/assets/script/3rd-party/parallax.js" | relative_url }}
-* {{ page.dir | append: "images/book-single-scroll.jpg" | relative_url }}
-* Absolute: {{ "/favicon.ico" | absolute_url }}
-* Relative: {{ "/favicon.ico" | relative_url }}
-
 Welcome to the status page for my book. Scroll down to see a summary of the plot and to catch up on the latest progress being made on this project.
 
 <div class="parallax-window" style="min-height:200px;" data-parallax="scroll" data-image-src='{{ page.dir | append: "images/book-single-scroll.jpg" | relative_url }}'></div><br/>
