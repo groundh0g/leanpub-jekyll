@@ -1,0 +1,41 @@
+{% capture discard %}
+
+    This helper will scan the site's static files for a file with the name and extension(s) you specify.
+
+    Parameters:
+
+    * rootPath - the path minus the filename. default: page.dir
+    * filename - the filename, minus extension. default: ""
+    * extensions - a comma-delimited string of file extensions. default: "jpg,png,gif,svg"
+
+    Example:
+
+    { % include find-static-file.liquid filename="avatar" % }
+
+    Returns:
+
+    * static_file - a file entity from the site.static_files collection.
+
+    The typical usage:
+
+    <img src="{{ static_file.path }}" alt="the avatar image" />
+
+
+
+    {% assign static_path = include.rootPath | default: page.dir | default: "" %}
+    {% assign static_name = include.filename | default: "" %}
+    {% assign static_path = static_path | append: static_name %}
+
+    {% assign exts = include.extensions | default: "jpg,png,gif,svg" | split: "," %}
+    {% for ext in exts %}
+        {% assign static_filepath = static_path | append: "." | append: ext %}
+        {% assign static_file = site.static_files | where_exp: "file", "file.path == static_filepath" | first %}
+        {% if static_file %}{% break %}{% endif %}
+    {% endfor %}
+
+    {% assign exts = nil %}
+    {% assign static_filepath = nil %}
+    {% assign static_path = nil %}
+    {% assign static_name = nil %}
+
+{% endcapture %}{% assign discard = nil %}

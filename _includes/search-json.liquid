@@ -1,0 +1,94 @@
+{% capture discard %}
+
+    {% capture newLine %}
+    {% endcapture %}
+    {% include read-config.liquid %}
+
+{% assign strip_chars = config.search.strip_chars %}
+    {% if config.search.strip_quote %}{% assign strip_chars = strip_chars | append: '"' %}{% endif %}
+{% assign strip_chars_len = strip_chars | size | minus: 1  %}
+
+{% assign output = "" %}
+
+    {% if config.search.posts %}
+        {% assign orderedPosts = site.posts | sort: "url" %}
+        {% for post in orderedPosts %}
+            {% if post.url contains ".html" %}
+                {% assign terms = "" %}
+                {% case config.search.content %}
+                {% when "full" %}
+                {% assign terms = post.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | downcase %}
+                    {% for i in (0..strip_chars_len) %}{% assign char = strip_chars | slice: i %}{% assign terms = terms | replace: char, " " %}{% endfor %}
+                {% assign terms = terms | split: ' ' | sort | uniq | join: ' ' %}
+                {% when "excerpt" %}
+                    {% if post.excerpt %}
+                        {% assign terms = post.excerpt | downcase %}
+                    {% else %}
+                        {% assign terms = post.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | downcase | truncatewords: 150 %}
+                        {% for i in (0..strip_chars_len) %}{% assign char = strip_chars | slice: i %}{% assign terms = terms | replace: char, " " %}{% endfor %}
+                        {% assign terms = terms | split: ' ' | sort | uniq | join: ' ' %}
+                    {% endif %}
+                {% endcase %}
+
+                {% assign taglen = post.tags | size %}
+                {% if config.search.tags and taglen > 0 %}
+                    {% assign terms = terms | append: " " | append: post.tags %}
+                {% endif %}
+
+                {% if config.search.titles %}
+                    {% assign terms = terms | append: " " | append: post.title %}
+                {% endif %}
+
+                {% capture line %}
+                    { "isPost": true, "url": "{{ post.url | relative_url }}", "title": "{{ post.title }}", "terms": "{{ terms }}" },
+                {% endcapture %}{% assign output = output | append: line %}
+
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if config.search.pages %}
+        {% assign orderedPages = site.pages | sort: "url" %}
+        {% for pg in orderedPages %}
+            {% if page.ignore contains pg.url %}{% continue %}{% endif %}
+
+            {% assign skip = false %}
+            {% for item in config.search.ignore %}{% if pg.url contains item %}{% assign skip = true %}{% break %}{% endif %}{% endfor %}
+            {% if skip %}{% continue %}{% endif %}
+            {% for item in config.search.groups %}{% if pg.url contains item and pg.url != item %}{% assign skip = true %}{% break %}{% endif %}{% endfor %}
+            {% if skip %}{% continue %}{% endif %}
+
+            {% assign terms = "" %}
+            {% case config.search.content %}
+            {% when "full" %}
+            {% assign terms = pg.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | downcase %}
+                {% for i in (0..strip_chars_len) %}{% assign char = strip_chars | slice: i %}{% assign terms = terms | replace: char, " " %}{% endfor %}
+            {% assign terms = terms | split: ' ' | sort | uniq | join: ' ' %}
+            {% when "excerpt" %}
+                {% if pg.excerpt %}
+                    {% assign terms = pg.excerpt | downcase %}
+                {% else %}
+                    {% assign terms = pg.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | downcase %}
+                    {% for i in (0..strip_chars_len) %}{% assign char = strip_chars | slice: i %}{% assign terms = terms | replace: char, " " %}{% endfor %}
+                    {% assign terms = terms | truncatewords: 150 %}
+                {% endif %}
+            {% endcase %}
+
+            {% assign taglen = pg.tags | size %}
+            {% if config.search.tags and taglen > 0 %}
+                {% assign terms = terms | append: " " | append: pg.tags %}
+            {% endif %}
+
+            {% if config.search.titles %}
+                {% assign terms = terms | append: " " | append: pg.title %}
+            {% endif %}
+            {% capture line %}
+                { "isPost": false, "url": "{{ pg.url | relative_url }}", "title": "{{ pg.title }}", "terms": "{{ terms }}" },
+            {% endcapture %}{% assign output = output | append: line %}
+        {% endfor%}
+    {% endif %}
+
+
+{% endcapture %}
+    {{ output }}
+{ "title": "bogus", "terms": "" }

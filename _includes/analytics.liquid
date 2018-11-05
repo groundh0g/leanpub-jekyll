@@ -1,0 +1,6 @@
+{% include read-config.liquid %}
+
+{% if config.analytics.provider %}
+{% assign provider = "providers-analytics/" | append: config.analytics.provider | append: ".liquid" %}
+{% include {{ provider }} %}
+{% endif %}

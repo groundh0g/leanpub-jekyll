@@ -1,0 +1,4 @@
+{% case include.config.fonticons.glyphicons %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/glyphicons.css" | relative_url }}'>
+{% endcase %}

@@ -1,0 +1,39 @@
+{% capture discard %}
+
+    This helper will scan the current page's peer files.
+
+    Parameters:
+
+    * pagename - the filename, including extension.
+
+    Example:
+
+    { % include find-pages-peer.liquid % }
+
+    Returns:
+
+    * pages - a collection of pages.
+    * pageCount - the number of pages.
+
+    The typical usage:
+
+    { % for page in pages % } ... { % endfor % }
+
+
+
+    {% assign pagename = include.pagename | default: page.name | default: "index.md" %}
+    {% assign pagedir = page.dir %}
+
+    <!-- get a list of peer files -->
+    {% assign pages = site.pages | where_exp: "page", "page.dir == pagedir" %}
+
+    <!-- for peer pages, we're looking for a different pagename -->
+    {% assign pages = pages | where_exp: "page", "page.name != pagename" %}
+
+    <!-- how many did we find? -->
+    {% assign pageCount = pages | size %}
+
+    {% assign pagename = nil %}
+    {% assign pagedir = nil %}
+
+{% endcapture %}{% assign discard = nil %}

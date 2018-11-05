@@ -1,0 +1,6 @@
+{% case include.config.fonticons.icomoon %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/iconmoon.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icomoon@1.0.0/style.css" integrity="sha256-xYCilzg1PSlpku4dmX4bH8O+UKcm1nn4ujWYmzsgyMU=" crossorigin="anonymous">
+{% endcase %}

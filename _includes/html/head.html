@@ -1,0 +1,153 @@
+<head>
+
+  {% include read-config.liquid %}
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+
+  {% assign theTitle = page.title | default: config.metadata.title | default: site.title | escape %}
+  <title>{{ theTitle }}</title>
+
+  {% assign theDescription = page.excerpt | default: config.metadata.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+  <meta name="description" content="{{ theDescription }}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ config.metadata.title | default: site.title | escape }}" href='{{ "/feed.xml" | relative_url }}'>
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+  <!-- BOOTSTRAP THEME -->
+
+  {% if config.build.use_cdn %}
+
+  {% case config.customize.theme %}
+    {% when "cerulean" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cerulean/bootstrap.min.css" rel="stylesheet" integrity="sha384-KZYvDM6uZ38YbkIu7BXKA/PnGrwKacp5/NXQ8UoYr3ZBgXBbI2ybVID/YMoBUmoa" crossorigin="anonymous">
+    {% when "cosmo" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-O87lDPxhG/Kda+dqPFpM5o84zNxqPnDK49gakxOjTS+q6zwSLxeOzfZy1mg9MasN" crossorigin="anonymous">
+    {% when "cyborg" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/cyborg/bootstrap.min.css" rel="stylesheet" integrity="sha384-5KpNAytmiDxBanrkBv7mxkrUV1uggYCd+nLTGVig8i0ubJLVBFWQKXnGK5nR4kJF" crossorigin="anonymous">
+    {% when "darkly" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/darkly/bootstrap.min.css" rel="stylesheet" integrity="sha384-J01jr7rrJqxij+hUE1E+8N35mlD7L/TMrAO7tOarwMP7AWJM3P/lGXOjt0KLNhtE" crossorigin="anonymous">
+    {% when "flatly" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-kCsv8pSAWtRge/+zcLDeqwoWhTQSUX2esQPYOsocgrg1eMj7T2wrTJP348T3mpBU" crossorigin="anonymous">
+    {% when "journal" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/journal/bootstrap.min.css" rel="stylesheet" integrity="sha384-5bYMJO1P7tdABaKtvXuoX0R6JAQx/1sraUN51G34E9XYSxfwsAVkdum8Sbgg931T" crossorigin="anonymous">
+    {% when "litera" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/litera/bootstrap.min.css" rel="stylesheet" integrity="sha384-E+ZoPrD9N70Q8SUyx+eufEe3KkDtuORRKqt8koXJ9Uxjm4d37YeaU517lm63QRjM" crossorigin="anonymous">
+    {% when "lumen" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/lumen/bootstrap.min.css" rel="stylesheet" integrity="sha384-3peic20OBS+kS9351sQOOO1LJYgA7iQkz8mjQQIGqCWy+rkEEOGIIIgQrVqL88+X" crossorigin="anonymous">
+    {% when "lux" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/lux/bootstrap.min.css" rel="stylesheet" integrity="sha384-mDdzqEimigFhaXpqHTnkj2JumLRbFB9qEVJK77zv7lBrdvhyPgl0WaWE7jloVkek" crossorigin="anonymous">
+    {% when "materia" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/materia/bootstrap.min.css" rel="stylesheet" integrity="sha384-BJWCnw/x/9+kQsLGLQDoCX2oJg7j1LjkOfPZWtUPTJ0tn00hYIB5r9u7KnGJxFnY" crossorigin="anonymous">
+    {% when "minty" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/minty/bootstrap.min.css" rel="stylesheet" integrity="sha384-b8rPE9Kj0lNck6sxWxUIJRCE3IHrqNXF74vcnXKYS/NZPi7WInVsaIKeEjIDpyNt" crossorigin="anonymous">
+    {% when "pulse" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/pulse/bootstrap.min.css" rel="stylesheet" integrity="sha384-MF/Rtd9T3eOtgzSgXgBuiFnRWPX4/er58q9bm/UjsbR3ZmFpMAOy1Fbp9b1S+PVS" crossorigin="anonymous">
+    {% when "sandstone" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/sandstone/bootstrap.min.css" rel="stylesheet" integrity="sha384-0SEzCkemOL0R1IOfjiayiYyt8BkqxwlmXBmFWMUNeG0BSo/XUh4xAF5ybf+Qr/4x" crossorigin="anonymous">
+    {% when "simplex" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/simplex/bootstrap.min.css" rel="stylesheet" integrity="sha384-dGOMD5bzPwVfOGp4zGQiudlmCab9PN0dIsv1r1MCotfVsSXM3m5ZiqEVO56XzCCh" crossorigin="anonymous">
+    {% when "sketchy" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-rfPl7UHwaHyXh/n5kFubgXzPE1QcgUOk9qyasE7bw4YTXgJ7A5Y/ljxbuNFETD7L" crossorigin="anonymous">
+    {% when "slate" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-A0hm/Pn0Gvk8w7szlEuTOZrIyQCCBNXQF9ccseoCI36nWRfMEAapo5UJ56zLPvPw" crossorigin="anonymous">
+    {% when "solar" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/solar/bootstrap.min.css" rel="stylesheet" integrity="sha384-Ac4ZYxfuTGU/klWhV1QAf06YAKz91+Q/13hUSYZ6jv9N371Jgh4K2rvTVgR0+fKW" crossorigin="anonymous">
+    {% when "spacelab" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/spacelab/bootstrap.min.css" rel="stylesheet" integrity="sha384-pKE6eNDByK+/3jaksY4hQa8dirMgKeMfVqBRh9NrQ0DIbhGG0957GjWSlvLrxnZ6" crossorigin="anonymous">
+    {% when "superhero" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/superhero/bootstrap.min.css" rel="stylesheet" integrity="sha384-ngZZrhEgN1Rw+Eiz3bD0nopbhvTAwzNg5ePjP2mhYmjHiTqG+ouPwi4ribjATEKe" crossorigin="anonymous">
+    {% when "united" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/united/bootstrap.min.css" rel="stylesheet" integrity="sha384-h1Za54CnmmJzf7NmR8Ztwc+1fpFNNmt0Q9iprQpdKcF4JOjN2PeNFFzFuqBxrEL2" crossorigin="anonymous">
+    {% when "yeti" %}
+      <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.0/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-g5/PGO4MT6Ct3LyyiNCIa2QxuvcNMI554Lu35FXydDQCWwm4v51q+yUQEynNdWpY" crossorigin="anonymous">
+    {% else %}
+      <!-- Unknown BootSwatch theme, '{{ config.customize.theme }}'. Using the default Bootstrap theme. -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  {% endcase %}
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+          integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+          crossorigin="anonymous"></script>
+
+  <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"-->
+          <!--integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"-->
+          <!--crossorigin="anonymous"></script>-->
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.bundle.min.js"
+          integrity="sha384-lZmvU/TzxoIQIOD9yQDEpvxp6wEU32Fy0ckUgOH4EIlMOCdR823rg4+3gWRwnX1M"
+          crossorigin="anonymous"></script>
+
+  {% else %}
+
+    {% assign cssTheme = config.customize.theme | default: "default" %}
+    {% assign cssPath = "/assets/themes/bootstrap." | append: cssTheme | append: ".min.css" %}
+    <link rel="stylesheet" href='{{ cssPath | relative_url }}'>
+
+    <script src='{{ "/assets/script/3rd-party/jquery.min.js" | relative_url }}'></script>
+    <script src='{{ "/assets/script/3rd-party/bootstrap.bundle.min.js" | relative_url }}'></script>
+
+  {% endif %}
+
+  <script src='{{ "/assets/script/3rd-party/typeahead.bundle.min.js" | relative_url }}'></script>
+
+  <!-- JekyllFaces SCRIPT and STYLES -->
+
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/jekyllfaces/'" %}
+  {% for css in styles %}
+  <link rel="stylesheet" href='{{ css.url | relative_url }}'>
+  {% endfor %}
+
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/jekyllfaces/'" %}
+  {% for js in scripts %}
+  <script src='{{ js.url | relative_url }}'></script>
+  {% endfor %}
+
+  <!-- USER SCRIPT and STYLES -->
+
+  {% assign styles = site.pages | where_exp: "item", "item.path contains 'assets/style/custom/'" %}
+  {% for css in styles %}
+    <link rel="stylesheet" href='{{ css.url | relative_url }}'>
+  {% endfor %}
+
+  {% assign scripts = site.pages | where_exp: "item", "item.path contains 'assets/script/custom/'" %}
+  {% for js in scripts %}
+    <script src='{{ js.url | relative_url }}'></script>
+  {% endfor %}
+
+  <!-- FONT ICONS -->
+
+  {% include fonticons.liquid %}
+
+  <!-- ANALYTICS -->
+
+  {% include analytics.liquid %}
+
+  <style type="text/css">
+    {% if config.navbar.fixed %}
+    body { padding-top:90px; }
+    {% else %}
+    nav.navbar { margin-bottom: 20px; }
+    {% endif%}
+  </style>
+
+
+  <!-- Account for fixed navbar when navigating within page. -->
+  <!-- https://github.com/twbs/bootstrap/issues/1768#issuecomment-13306753 -->
+
+  {% if config.navbar.fixed %}
+    <script type="application/javascript">
+      var shiftAfterHashNavChange = function() { scrollBy(0,-90); };
+      window.addEventListener("hashchange", shiftAfterHashNavChange);
+      $(document).ready(function() { if(window.location.hash) shiftAfterHashNavChange(); });
+    </script>
+  {% endif %}
+
+</head>

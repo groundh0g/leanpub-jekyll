@@ -1,0 +1,17 @@
+{% include read-config.liquid %}
+
+<!-- Begin Duoshuo Comments -->
+<div class="ds-thread" data-thread-key="{{ page.url | relative_url | sha256 }}"></div>
+<script type="text/javascript">
+    var duoshuoQuery = {short_name:"{{ config.comments.siteid }}"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.id = 'duoshuo-script';
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+            || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- End Duoshuo Comments -->

@@ -1,0 +1,6 @@
+{% include read-config.liquid %}
+
+{% if config.comments.provider %}
+    {% assign provider = "providers-comments/" | append: config.comments.provider | append: ".liquid" %}
+    {% include {{ provider }} %}
+{% endif %}

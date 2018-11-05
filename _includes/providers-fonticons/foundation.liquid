@@ -1,0 +1,6 @@
+{% case include.config.fonticons.foundation %}
+{% when "local" %}
+    <link rel="stylesheet" href='{{ "/assets/fonticons/foundation.css" | relative_url }}'>
+{% when "cdn" %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation-icons/3.0/foundation-icons.min.css" integrity="sha256-RYMme8QITYCPWDLzOXswkTsPu1tjeAE2Myb7Kid/JBY=" crossorigin="anonymous">
+{% endcase %}

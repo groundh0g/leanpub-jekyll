@@ -1,0 +1,11 @@
+{% include read-config.liquid %}
+
+<!-- Start IntenseDebate Comments -->
+<script>
+    var idcomments_acct = '{{ config.comments.siteid }}';
+    var idcomments_post_id = '{{ page.url | relative_url | sha256 }}';
+    var idcomments_post_url = '{{ page.url | absolute_url }}';
+</script>
+
+<script type="text/javascript" src="http://www.intensedebate.com/js/genericCommentWrapperV2.js"></script>
+<!-- End IntenseDebate Comments -->
