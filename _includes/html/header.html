@@ -13,7 +13,7 @@
         {% assign textLength = link[1].text | size %}
         {% if textLength > 0 %}
           <li class="nav-item xx-active">
-            <a class="nav-link" href='{{link[1].href | replace: "~/", ""}}' target='{{link[1].targ | default: ""}}' title="{{link[1].desc}}">{{link[1].text}}</a>
+            <a class="nav-link" href='{{ link[1].href | replace: "~/", "" | relative_url }}' target='{{link[1].targ | default: ""}}' title="{{link[1].desc}}">{{link[1].text}}</a>
           </li>
         {% else %}
 
@@ -28,7 +28,7 @@
                 {% elsif sublink[1].text == "divider" %}
                   <div class="dropdown-divider"></div>
                 {% else %}
-                  <a class="dropdown-item" href='{{sublink[1].href | replace: "~/", "/"}}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
+                  <a class="dropdown-item" href='{{ sublink[1].href | replace: "~/", "" | relative_url }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
                 {% endif %}
               {% endfor %}
             </div>
