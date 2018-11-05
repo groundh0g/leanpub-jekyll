@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary navbar-nav {% if config.navbar.fixed %}fixed-top{% endif%}">
   {% if config.navbar.container %}<div class="container">{% endif %}
-  <a class="navbar-brand" href='{{ "/" | absolute_path }}'>{{ config.metadata.title }}</a>
+  <a class="navbar-brand" href='{{ "/" | relative_url }}'>{{ config.metadata.title }}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -13,7 +13,7 @@
         {% assign textLength = link[1].text | size %}
         {% if textLength > 0 %}
           <li class="nav-item xx-active">
-            <a class="nav-link" href='{{ link[1].href | replace: "~/", "" | relative_url }}' target='{{link[1].targ | default: ""}}' title="{{link[1].desc}}">{{link[1].text}}</a>
+            <a class="nav-link" href='{{ link[1].href | replace: "~/", "/" | relative_url }}' target='{{link[1].targ | default: ""}}' title="{{link[1].desc}}">{{link[1].text}}</a>
           </li>
         {% else %}
 
@@ -28,7 +28,7 @@
                 {% elsif sublink[1].text == "divider" %}
                   <div class="dropdown-divider"></div>
                 {% else %}
-                  <a class="dropdown-item" href='{{ sublink[1].href | replace: "~/", "" | relative_url }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
+                  <a class="dropdown-item" href='{{ sublink[1].href | replace: "~/", "/" | relative_url }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
                 {% endif %}
               {% endfor %}
             </div>
@@ -36,7 +36,7 @@
         {% endif %}
       {% endfor %}
     </ul>
-    <form class="form-inline my-2 my-lg-0" method="get" action='{{ "/search.html" | relative_path | append: "?q=joe+hall" }}'>
+    <form class="form-inline my-2 my-lg-0" method="get" action='{{ "/search.html" | relative_url | append: "?q=joe+hall" }}'>
       <div>
         <input class="form-control mr-sm-2 typeahead" type="text" id="txtSearch" placeholder="Search" aria-label="Search">
       </div>
