@@ -15,7 +15,7 @@ metadata:
   lang: en
 
 customize:
-  theme: flatly       # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
+  theme: journal       # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
   http404: sticky     # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
   #css: [ "main.css" ] # array of stylesheets to load after other styles
   #js:  [ "main.js"  ] # array of javascripts to load after other scripts
@@ -39,15 +39,15 @@ navbar:
   container:     true # is nav same width as content?
   content:
     blog: 
-        text: <span><i class="fa fa-pencil"></i> Blog &amp; News</span>
-        href: ~/blog.html
+        text: <span><i class="fa fa-newspaper-o"></i> Blog &amp; News</span>
+        href: ~/
         desc: The latest musings of the author.
     author:
-        text: <span><i class="fa fa-user"></i> The Author</span>
+        text: <span><i class="fa fa-user-circle-o"></i> The Author</span>
         href: ~/author.html
         desc: Information about the author.
     book:
-        display: <span><i class="fa fa-bookmark"></i> The Book</span>
+        display: <span><i class="fa fa-bookmark-o"></i> The Book</span>
         synopsis:
             text: <span><i class="fa fa-info-circle"></i> Synopsis</span>
             href: ~/manuscript/site-synopsis.html

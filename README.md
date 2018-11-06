@@ -50,7 +50,7 @@ This project supports all of the free [Bootswatch](https://bootswatch.com/) them
 
 ![Themes](https://github.com/groundh0g/leanpub-jekyll/blob/gh-pages/themes.png?raw=true)
 
-You can apply a theme by editing the `theme` value in the `_jekyllfaces/config.md`. To use the default Bootstrap theme, pick `default`.
+You can apply a theme by editing the `theme` value in the `_jekyllfaces/config.md` file. To use the default Bootstrap theme, pick `default`.
 
 ~~~
 customize:
@@ -65,7 +65,7 @@ I'm not a fan of the default Jekyll 404 page, so I created a few for you to pick
 
 ![404 Pages](https://github.com/groundh0g/leanpub-jekyll/blob/gh-pages/404-pages.png?raw=true)
 
-You can select one of the custom 404 pages by editing the `http404` value in the `_jekyllfaces/config.md`. To use the default 404 page, pick `default`.
+You can select one of the custom 404 pages by editing the `http404` value in the `_jekyllfaces/config.md` file. To use the default 404 page, pick `default`.
 
 ~~~
 customize:
