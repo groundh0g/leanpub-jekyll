@@ -26,7 +26,7 @@ I made the following changes within the `manuscript` folder:
 
 ## Blogging
 
-This is a 
+This is a standard Jekyll site. Blog posts are created a separate files in the `_posts` folder. For more information on creating blog posts in Jekyll, see the [official documentation](https://jekyllrb.com/docs/posts/), or check out the example posts that come with this project.
 
 ## Configuration - Jekyll
 
@@ -36,8 +36,108 @@ Jekyll is typically configured by entries in the `_config.yml` file. This projec
 baseurl: "/leanpub-jekyll" # the subpath of your site, e.g. /blog
 ~~~
 
+If your site isn't hosted at the root, you'll need to set the `baseurl` value accordingly.
+
 ## Configuration - leanpub-jekyll
 
-Blah.
+Just about everything that you'll want to tweak on your site is located in the `_jekyllfaces/config.md` file.
+
+> **NOTE:** If you've used Jekyll in the past, you might be wondering why I moved the settings. It's simple. Jekyll doesn't recognize edits to the `_config.yml` file until the server is restarted. Edits to the `_jekyllfaces/config.md` are reflected immediately.
+
+### Themes
+
+This project supports all of the free [Bootswatch](https://bootswatch.com/) themes, as well as the default [Bootstrap](http://getbootstrap.com/) theme.
 
 ![Themes](https://github.com/groundh0g/leanpub-jekyll/blob/gh-pages/themes.png?raw=true)
+
+You can apply a theme by editing the `theme` value in the `_jekyllfaces/config.md`. To use the default Bootstrap theme, pick `default`.
+
+~~~
+customize:
+  theme: flatly       # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | 
+                      #         lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | 
+                      #         solar | spacelab | superhero | united | yeti
+~~~
+
+### 404 Pages
+
+I'm not a fan of the default Jekyll 404 page, so I created a few for you to pick from. 
+
+![404 Pages](https://github.com/groundh0g/leanpub-jekyll/blob/gh-pages/404-pages.png?raw=true)
+
+You can select one of the custom 404 pages by editing the `http404` value in the `_jekyllfaces/config.md`. To use the default 404 page, pick `default`.
+
+~~~
+customize:
+  http404: sticky     # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | 
+                      #         sticky | tweet | zork
+~~~
+
+### Font Icons
+
+This project supports all the font icons that you can search on [GlyphSearch.com](https://glyphsearch.com/). By default, the Font Awesome icons are enabled. Note that loading all fonts may make your site load more slowly.
+
+~~~
+fonticons:
+  fontawesome: cdn   # one of: false | local | cdn
+  foundation:  false # one of: false | local | cdn
+  glyphicons:  false # one of: false | local
+  icomoon:     false # one of: false | local | cdn
+  ionicons:    false # one of: false | local | cdn
+  material:    false # one of: false | local | cdn
+  octicons:    false # one of: false | local | cdn
+~~~
+
+### Navbar Links
+
+The links at the top of the page are created from the values under the `navbar` node in the `_jekyllfaces/config.md` file. Take a peek, make some tweaks, see what happens. It should be pretty straight forward.
+
+~~~
+navbar:
+  fixed:         true # sticky navbar?
+  container:     true # is nav same width as content?
+  content:
+    blog: 
+        text: <span><i class="fa fa-pencil"></i> Blog &amp; News</span>
+        href: ~/blog.html
+        desc: The latest musings of the author.
+    author:
+        text: <span><i class="fa fa-user"></i> The Author</span>
+        href: ~/author.html
+        desc: Information about the author.
+    book:
+        display: <span><i class="fa fa-bookmark"></i> The Book</span>
+        synopsis:
+            text: <span><i class="fa fa-info-circle"></i> Synopsis</span>
+            href: ~/manuscript/site-synopsis.html
+            desc: Information about the book-in-progress.
+        progress:
+            text: <span><i class="fa fa-line-chart"></i> Progress</span>
+            href: ~/manuscript/site-statistics.html
+            desc: Status of the book-in-progress.
+        manuscript:
+            text: <span><i class="fa fa-file-text-o"></i> The Manuscript</span>
+            href: ~/manuscript/site-manuscript.html
+            desc: Read the book-in-progress.
+        divider-1: true
+        ebook:
+            text: <span><i class="fa fa-tablet"></i> eBook</span>
+            href: https://leanpub.com/fauxcabulary
+            targ: _blank
+            desc: The published book, on Leanpub.com.
+        print:
+            text: <span><i class="fa fa-book"></i> Print Book</span>
+            href: http://www.lulu.com/shop/joseph-hall/fauxcabulary/paperback/product-22179468.html
+            targ: _blank
+            desc: The published book, on Lulu.com.
+        divider-2: true
+        source:
+            text: <span><i class="fa fa-github"></i> Source</span>
+            href: https://github.com/groundh0g/leanpub-jekyll
+            targ: _blank
+            desc: The GitHub project for this book.
+~~~
+
+## Coming Soon
+
+The search, analytics, and comments features are being implemented next. Stay tuned!
