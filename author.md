@@ -1,5 +1,6 @@
 <!-- --------------- -->
 <!-- The text for this page is found in `author-bio.md` -->
+<!-- The image for this page is found in `assets/images/author.png` -->
 <!-- --------------- -->
 
 {% capture blurb %}{% include_relative author-bio.md %}{% endcapture %}

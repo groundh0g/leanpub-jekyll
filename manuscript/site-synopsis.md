@@ -1,8 +1,9 @@
 <!-- --------------- -->
-<!-- The text for this page is found in `synopsis-description.md` -->
+<!-- The text for this page is found in `manuscript/synopsis-description.md` -->
+<!-- The image for this page is found in `manuscript/images/cover.png` -->
 <!-- --------------- -->
 
-{% capture blurb %}{% include_relative synopsis-description.md %}{% endcapture %}
+{% capture blurb %}{% include_relative site-synopsis-description.md %}{% endcapture %}
 
 <div class="row">
   <div class="col-md-4">
