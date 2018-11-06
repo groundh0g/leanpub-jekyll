@@ -50,15 +50,15 @@ navbar:
         display: <span><i class="fa fa-bookmark"></i> The Book</span>
         synopsis:
             text: <span><i class="fa fa-info-circle"></i> Synopsis</span>
-            href: ~/manuscript/synopsis.html
+            href: ~/manuscript/site-synopsis.html
             desc: Information about the book-in-progress.
         progress:
             text: <span><i class="fa fa-line-chart"></i> Progress</span>
-            href: ~/manuscript/statistics.html
+            href: ~/manuscript/site-statistics.html
             desc: Status of the book-in-progress.
         manuscript:
             text: <span><i class="fa fa-file-text-o"></i> The Manuscript</span>
-            href: ~/manuscript/manuscript.html
+            href: ~/manuscript/site-manuscript.html
             desc: Read the book-in-progress.
         divider-1: true
         ebook:
