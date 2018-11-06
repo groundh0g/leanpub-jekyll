@@ -11,29 +11,6 @@ Welcome to the status page for my book. Scroll down to see a summary of the plot
 
 <hr/>
 
-{% capture blurb %}{% include_relative synopsis.md %}{% endcapture %}
-
-<div class="row">
-  <div class="col-md-4">
-    <img style="width:100%;" src='{{ page.dir | append: "images/cover.png" | relative_url }}' alt='The book cover image.' />
-  </div>
-  <div class="col-md-8">
-    {{ blurb | markdownify }}
-  </div>
-</div>
-
-<hr/>
-
-# Statistics
-
-If you're the kind of person that likes statistics, here's the current status of the project. This list is automatically updated whenever I make an edit to the book's content.
-
-Some more text here ...
-
-{% include_relative statistics.md %}
-
-<hr/>
-
 
 <!-- ## The License -->
 

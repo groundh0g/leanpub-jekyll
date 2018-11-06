@@ -48,14 +48,19 @@ navbar:
         desc: Information about the author.
     book:
         display: <span><i class="fa fa-bookmark"></i> The Book</span>
-        overview:
-            text: <span><i class="fa fa-info-circle"></i> Summary</span>
-            href: ~/manuscript/
+        synopsis:
+            text: <span><i class="fa fa-info-circle"></i> Synopsis</span>
+            href: ~/manuscript/synopsis.html
             desc: Information about the book-in-progress.
+        progress:
+            text: <span><i class="fa fa-line-chart"></i> Progress</span>
+            href: ~/manuscript/statistics.html
+            desc: Status of the book-in-progress.
         manuscript:
             text: <span><i class="fa fa-file-text-o"></i> The Manuscript</span>
-            href: ~/manuscript/draft.html
+            href: ~/manuscript/manuscript.html
             desc: Read the book-in-progress.
+        divider-1: true
         ebook:
             text: <span><i class="fa fa-tablet"></i> eBook</span>
             href: https://leanpub.com/fauxcabulary
@@ -66,6 +71,7 @@ navbar:
             href: http://www.lulu.com/shop/joseph-hall/fauxcabulary/paperback/product-22179468.html
             targ: _blank
             desc: The published book, on Lulu.com.
+        divider-2: true
         source:
             text: <span><i class="fa fa-github"></i> Source</span>
             href: https://github.com/groundh0g/leanpub-jekyll

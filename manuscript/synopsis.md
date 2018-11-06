@@ -1,10 +1,16 @@
-### Bobo: Against the Pod
+<!-- --------------- -->
+<!-- The text for this page is found in `synopsis-description.md` -->
+<!-- --------------- -->
 
-In a world where dogs and cats intermarry, it's not so unusual for Bobo the whale to fall in love with a dolphin. At 
-least they're not separated by the shoreline. They do, however, have to contend with the overzealous captain of the
-world's largest fishing vessel as it races to become the most productive, self-contained processing vehicle of all time.
+{% capture blurb %}{% include_relative synopsis-description.md %}{% endcapture %}
 
-Will Captain Mike capture and convert Bobo into motor oil, fish sticks, and cosmetics? Will the love of his life wind 
-up in a tuna net? The next 48 hours will decide their ultimate fate ... and that of the world!
+<div class="row">
+  <div class="col-md-4">
+    <img style="width:100%;" src='{{ page.dir | append: "images/cover.png" | relative_url }}' alt='The book cover image.' />
+  </div>
+  <div class="col-md-8">
+    {{ blurb | markdownify }}
+  </div>
+</div>
 
-[Read the Book &raquo;](draft.html)
+<hr/>

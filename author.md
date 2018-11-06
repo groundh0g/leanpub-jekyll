@@ -1,0 +1,16 @@
+<!-- --------------- -->
+<!-- The text for this page is found in `author-bio.md` -->
+<!-- --------------- -->
+
+{% capture blurb %}{% include_relative author-bio.md %}{% endcapture %}
+
+<div class="row">
+  <div class="col-md-4">
+    <img style="width:100%;" src='{{ page.dir | append: "assets/images/author.png" | relative_url }}' alt='Picture of the author.' />
+  </div>
+  <div class="col-md-8">
+    {{ blurb | markdownify }}
+  </div>
+</div>
+
+<hr/>

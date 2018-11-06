@@ -14,7 +14,7 @@
   {% assign theDescription = page.excerpt | default: config.metadata.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
   <meta name="description" content="{{ theDescription }}">
 
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="canonical" href='{{ page.url | replace: "index.html", "" | absolute_url }}'>
   <link rel="alternate" type="application/rss+xml" title="{{ config.metadata.title | default: site.title | escape }}" href='{{ "/feed.xml" | relative_url }}'>
 
   <link rel="shortcut icon" href='{{ "/favicon.ico" | relative_url }}' type="image/x-icon">

@@ -25,10 +25,14 @@
               {% for sublink in link[1] %}
                 {% if sublink[0] == "display" %}
                   <!-- do nothing -->
-                {% elsif sublink[1].text == "divider" %}
+                {% elsif sublink[0] contains "divider" %}
                   <div class="dropdown-divider"></div>
                 {% else %}
-                  <a class="dropdown-item" href='{{ sublink[1].href | replace: "~/", "/" | relative_url }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
+                  {% if sublink[1].href contains "http" %}
+                    <a class="dropdown-item" href='{{ sublink[1].href }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
+                  {% else %}
+                    <a class="dropdown-item" href='{{ sublink[1].href | replace: "~/", "/" | relative_url }}' target='{{sublink[1].targ | default: ""}}' title="{{sublink[1].desc}}">{{sublink[1].text}}</a>
+                  {% endif %}
                 {% endif %}
               {% endfor %}
             </div>
