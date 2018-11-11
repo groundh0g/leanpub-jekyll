@@ -16,6 +16,10 @@
 
     {% include html/footer.html %}
 
+{% if config.search.content %}
+  <script src='{{ "/assets/script/jekyllfaces/search.js" | relative_url }}'></script>
+{% endif %}
+
   </body>
 
 </html>

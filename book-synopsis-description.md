@@ -7,4 +7,4 @@ world's largest fishing vessel as it races to become the most productive, self-c
 Will Captain Mike capture and convert Bobo into motor oil, fish sticks, and cosmetics? Will the love of his life wind
 up in a tuna net? The next 48 hours will decide their ultimate fate ... and that of the world!
 
-[Read the Book &raquo;](manuscript.html)
+[Read the Book &raquo;](book-manuscript.html)

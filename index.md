@@ -1,6 +1,6 @@
 ---
 page: page
-title: Book-in-Progress
+title: Home
 ---
 
 Welcome to the website for my book-in-progress. The most recent blog posts are listed below. To see a list of all blog posts, please see [The Archive](archive.html).
@@ -26,6 +26,6 @@ Welcome to the website for my book-in-progress. The most recent blog posts are l
 <!-- Edit the `manuscript/site-copyright.md` file to suit your needs -->
 <!-- --------------- -->
 
-{% include_relative manuscript/site-copyright.md %}
+{% include_relative book-copyright.md %}
 
 <script src='{{ "/assets/script/3rd-party/parallax.js" | relative_url }}'></script>

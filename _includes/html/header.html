@@ -42,9 +42,8 @@
     </ul>
     <form class="form-inline my-2 my-lg-0" method="get" action='{{ "/search.html" | relative_url | append: "?q=joe+hall" }}'>
       <div>
-        <input class="form-control mr-sm-2 typeahead" type="text" id="txtSearch" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2 typeahead" type="text" name="txtSearch" id="txtSearch" placeholder="Search" aria-label="Search">
       </div>
-      <input id="hidSearch" type="hidden" name="q" value="joe hall" />
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
   </div>

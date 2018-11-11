@@ -44,21 +44,21 @@ navbar:
         desc: The latest musings of the author.
     author:
         text: <span><i class="fa fa-user-circle-o"></i> The Author</span>
-        href: ~/author.html
+        href: ~/book-author.html
         desc: Information about the author.
     book:
         display: <span><i class="fa fa-bookmark-o"></i> The Book</span>
         synopsis:
             text: <span><i class="fa fa-info-circle"></i> Synopsis</span>
-            href: ~/manuscript/site-synopsis.html
+            href: ~/book-synopsis.html
             desc: Information about the book-in-progress.
         progress:
             text: <span><i class="fa fa-line-chart"></i> Progress</span>
-            href: ~/manuscript/site-statistics.html
+            href: ~/book-statistics.html
             desc: Status of the book-in-progress.
         manuscript:
             text: <span><i class="fa fa-file-text-o"></i> The Manuscript</span>
-            href: ~/manuscript/site-manuscript.html
+            href: ~/book-manuscript.html
             desc: Read the book-in-progress.
         divider-1: true
         ebook:
@@ -88,7 +88,7 @@ navbar:
 
 search:
   content:      full # one of: false | full | excerpt
-  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html" ]
+  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html" ]
   groups:       [ "/content/contributors/", "/content/legal/" ]
   strip_chars:  "|'.,:;!?├─└…()[]#-/“”{}’"
   strip_quote:  true
@@ -104,6 +104,12 @@ search:
   #webapps:      true # search webapps overview content? {build.webapps} when blank
   #legal:        true # search legal content? {build.legal} when blank
   #contributors: true # search contributors page? {build.contributors} when blank
+
+  # map content pages to hosting pages (the editable files to the display files)
+  pagemaps:
+    book-author-bio: book-author
+    book-manuscript-chapters: book-manuscript
+    book-synopsis-description: book-synopsis
 
 fonticons:
   fontawesome: cdn   # one of: false | local | cdn

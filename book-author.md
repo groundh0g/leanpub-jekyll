@@ -3,7 +3,7 @@
 <!-- The image for this page is found in `assets/images/author.png` -->
 <!-- --------------- -->
 
-{% capture blurb %}{% include_relative author-bio.md %}{% endcapture %}
+{% capture blurb %}{% include_relative book-author-bio.md %}{% endcapture %}
 
 <div class="row">
   <div class="col-md-4">

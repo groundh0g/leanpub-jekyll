@@ -39,8 +39,16 @@
                     {% assign terms = terms | append: " " | append: post.title %}
                 {% endif %}
 
+                {% assign url = post.url | relative_url %}
+                {% for u in config.search.pagemaps %}
+                    {% if url contains u[0] %}
+                        {% assign url = url | replace: u[0], u[1] %}
+                    {% endif %}
+                {% endfor %}
+
+                {% assign excerpt = pg.excerpt | default: pg.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | truncatewords: 150 %}
                 {% capture line %}
-                    { "isPost": true, "url": "{{ post.url | relative_url }}", "title": "{{ post.title }}", "terms": "{{ terms }}" },
+                    { "isPost": true, "url": "{{ url }}", "title": "{{ post.title }}", "terms": "{{ terms }}", "excerpt": "{{ excerpt }}" },
                 {% endcapture %}{% assign output = output | append: line %}
 
             {% endif %}
@@ -79,16 +87,26 @@
                 {% assign terms = terms | append: " " | append: pg.tags %}
             {% endif %}
 
+            {% assign url = pg.url | relative_url %}
+            {% for u in config.search.pagemaps %}
+                {% if url contains u[0] %}
+                    {% assign url = url | replace: u[0], u[1] %}
+                {% endif %}
+            {% endfor %}
+
             {% if config.search.titles %}
                 {% assign terms = terms | append: " " | append: pg.title %}
             {% endif %}
+            {% assign excerpt = pg.excerpt | default: pg.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | truncatewords: 150 %}
             {% capture line %}
-                { "isPost": false, "url": "{{ pg.url | relative_url }}", "title": "{{ pg.title }}", "terms": "{{ terms }}" },
+                { "isPost": false, "url": "{{ url }}", "title": "{{ pg.title }}", "terms": "{{ terms }}", "excerpt": "{{ excerpt }}" },
             {% endcapture %}{% assign output = output | append: line %}
         {% endfor%}
     {% endif %}
 
 
-{% endcapture %}
-    {{ output }}
+{% endcapture %}{% assign discard = nil %}
+[
+{{ output }}
 { "title": "bogus", "terms": "" }
+]

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 
+title: Blog and News Archive
 ---
 
 This is the archive for the blog posts.
@@ -24,6 +24,6 @@ This is the archive for the blog posts.
 <!-- Edit the `manuscript/site-copyright.md` file to suit your needs -->
 <!-- --------------- -->
 
-{% include_relative manuscript/site-copyright.md %}
+{% include_relative book-copyright.md %}
 
 <script src='{{ "/assets/script/3rd-party/parallax.js" | relative_url }}'></script>

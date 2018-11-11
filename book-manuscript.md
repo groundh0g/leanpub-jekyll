@@ -12,11 +12,11 @@ This is the latest draft of the book. Edits may not be complete, so expect error
 <!-- This script stitches the chapters together into a single page -->
 <!-- --------------- -->
 
-{% include_relative site-manuscript-chapters.incl %}
+{% include_relative book-manuscript-chapters.incl %}
 
 
 <!-- --------------- -->
-<!-- Edit the `site-copyright.md` file to suit your needs -->
+<!-- Edit the `book-copyright.md` file to suit your needs -->
 <!-- --------------- -->
 
-{% include_relative site-copyright.md %}
+{% include_relative book-copyright.md %}
