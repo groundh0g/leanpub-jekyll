@@ -1,17 +1,17 @@
 {% capture chapters %}{% include_relative manuscript/Book.txt %}{% endcapture %}
 {% assign chapters = chapters | newline_to_br | split: "<br />" %}
 
-{% assign chapterPaths = "" %}
+{% assign chapterPaths = "|" %}
 {% for chapter in chapters %}
   {% assign file = chapter | strip %}
   {% if file != "" and file != nil %}
     {% assign chapterPath = page.dir | append: "manuscript/" | append: file | relative_url %}
-    {% assign chapterPaths = chapterPaths | append: chapterPath %}
+    {% assign chapterPaths = chapterPaths | append: chapterPath | append: "|" %}
   {% endif %}
 {% endfor %}
 
 {% for page in site.pages %}
   {% if chapterPaths contains page.path %}
-  {{ page.content }}<hr/>
+  {{ page.content | markdownify }}<hr/>
   {% endif %}
 {% endfor %}
