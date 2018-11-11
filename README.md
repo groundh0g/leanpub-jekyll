@@ -138,7 +138,7 @@ navbar:
             desc: The GitHub project for this book.
 ~~~
 
-## Search
+### Search
 
 Search is tricky to implement in Jekyll for newcomers. Leanpub-jekyll automatically indexes your content and makes it searchable from the navigation bar at the top of the site. Posts, chapters, statistics, author bio, ... everything can be included. Of course, it's also configurable.
 
