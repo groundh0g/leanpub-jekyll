@@ -88,8 +88,8 @@ navbar:
 
 search:
   content:      full # one of: false | full | excerpt
-  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html" ]
-  groups:       [ "/content/contributors/", "/content/legal/" ]
+  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html", "/search.html" ]
+  #groups:       [ "/content/contributors/", "/content/legal/" ]
   strip_chars:  "|'.,:;!?├─└…()[]#-/“”{}’"
   strip_quote:  true
   titles:       true # search titles from pages and posts?
@@ -105,7 +105,7 @@ search:
   #legal:        true # search legal content? {build.legal} when blank
   #contributors: true # search contributors page? {build.contributors} when blank
 
-  # map content pages to hosting pages (the editable files to the display files)
+  ## map content pages to hosting pages (the editable files to the display files)
   pagemaps:
     book-author-bio: book-author
     book-manuscript-chapters: book-manuscript

@@ -1,3 +1,7 @@
+---
+title: Book Manuscript
+---
+
 <!-- --------------- -->
 <!-- Edit this text to suit your needs -->
 <!-- --------------- -->

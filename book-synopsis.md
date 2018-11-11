@@ -1,3 +1,7 @@
+---
+title: The Synopsis
+---
+
 <!-- --------------- -->
 <!-- The text for this page is found in `book-synopsis-description.md` -->
 <!-- The image for this page is found in `manuscript/images/cover.png` -->

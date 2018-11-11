@@ -71,7 +71,7 @@
             {% when "full" %}
             {% assign terms = pg.content | markdownify | newline_to_br | replace: "<br />", " " | strip_html | strip_whitespace | strip_newlines | downcase %}
                 {% for i in (0..strip_chars_len) %}{% assign char = strip_chars | slice: i %}{% assign terms = terms | replace: char, " " %}{% endfor %}
-            {% assign terms = terms | split: ' ' | sort | uniq | join: ' ' %}
+                {% assign terms = terms | split: ' ' | sort | uniq | join: ' ' %}
             {% when "excerpt" %}
                 {% if pg.excerpt %}
                     {% assign terms = pg.excerpt | downcase %}

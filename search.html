@@ -15,10 +15,13 @@ title: Search Results
         if(searchText) {
             $("#txtSearch").val(searchText);
 
-            // TODO: Hack to fix double render. Ajax or document.ready is being called twice
+            // TODO: Hack to fix double render. Ajax or document.ready is being called twice.
             $("#searchResultsDiv").text("");
 
+            var visitedUrls = [];
             $.each(typeaheadHandler.getData(searchText), function(index, post) {
+                if(post && post.url && visitedUrls.indexOf(post.url) >= 0) return;
+
                 var regex = new RegExp(searchText, "gi");
                 var div = $("<div/>");
                 var header = null;
@@ -60,13 +63,17 @@ title: Search Results
                         .append(tags    || $("<span/>"))
                         .append(link)
                 );
+
+                visitedUrls.push(post.url);
             });
         }
     };
-
-    // if(typeof typeaheadHandler != 'undefined') {
-    //   // if(typeof whenSearchTermsReady !== 'undefined') {
-    //   whenSearchTermsReady();
-    //   // }
-    // }
 </script>
+
+<!-- --------------- -->
+<!-- Edit the `book-copyright.md` file to suit your needs -->
+<!-- --------------- -->
+
+{% capture copy %}{% include_relative book-copyright.md %}{% endcapture %}
+<hr/>
+{{ copy | markdownify }}

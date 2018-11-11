@@ -1,6 +1,10 @@
 ---
 ---
 
+{% assign searchJsonPath = "/search.json" | relative_url %}
+
+"use strict";
+
 var searchMatcher = function(posts) {
 
     return function findMatches(q, cb) {
@@ -28,28 +32,7 @@ var searchMatcher = function(posts) {
     };
 };
 
-{% comment %}
-// var posts = [
-// {% include search-json.liquid %}
-// ];
-{% endcomment %}
-
-// $(document).ready(function (){
-//     $('#txtSearch').typeahead({
-//             hint: true,
-//             highlight: true,
-//             minLength: 1
-//         },
-//         {
-//             // name: 'title',
-//             display: 'title',
-//             source: searchMatcher(posts)
-//         });
-//     $('#txtSearch').bind('typeahead:select', function(ev, suggestion) {
-//         console.log('Selection: ' + suggestion.query);
-//     });
-// });
-//
+// TODO: search works as expected, but typeahead isn't working. fix it.
 
 function TypeaheadHandler(inputId, data) {
 
@@ -85,7 +68,8 @@ function TypeaheadHandler(inputId, data) {
   };
 
   that.getData = function(substring) {
-    return getDataByFieldValue("title|tags|keywords|excerpt", substring);
+    // return getDataByFieldValue("title|tags|keywords|excerpt|terms", substring);
+    return getDataByFieldValue("terms", substring);
   };
 
   if($input && data) {
@@ -95,18 +79,16 @@ function TypeaheadHandler(inputId, data) {
       displayText: function(item) { return $('<div/>').html(item.title).text(); },
       matcher: function(post) {
         var text = (this.query || "").toLowerCase();
-        var match =
-        (post.title || "").toLowerCase().includes(text) ||
-        (post.tags || "").toLowerCase().includes(text) ||
-        (post.keywords || "").toLowerCase().includes(text) ||
-        (post.excerpt || "").toLowerCase().includes(text);
-        return match;
+        return (post.title || "").toLowerCase().includes(text) ||
+               (post.tags || "").toLowerCase().includes(text) ||
+               (post.keywords || "").toLowerCase().includes(text) ||
+               (post.excerpt || "").toLowerCase().includes(text);
       }
     }).change(function(){
       var $input = $(this);
       var current = $input.typeahead("getActive");
       if(current) {
-        if(current.title.toLowerCase() == $input.val().toLowerCase()) {
+        if(current.title.toLowerCase() === $input.val().toLowerCase()) {
           // active element is exact match
           //console.log(current);
         } else {
@@ -121,17 +103,13 @@ function TypeaheadHandler(inputId, data) {
 
 var typeaheadHandler = typeaheadHandler || new TypeaheadHandler();
 
-// $(document).ready(function() {
 $(document).ready(function() {
   var initData = function(data) {
     typeaheadHandler = new TypeaheadHandler("txtSearch", data);
     if(typeof whenSearchTermsReady !== 'undefined') {
       whenSearchTermsReady();
     }
-    //initData(posts);
   };
-
-  {% assign searchJsonPath = "/search.json" | relative_url %}
 
   $.ajax({
     dataType: "json",
@@ -147,9 +125,3 @@ $(document).ready(function() {
     }
   });
 });
-
-// $(document).ready(function() {
-//   if(typeof whenSearchTermsReady !== 'undefined') {
-//     whenSearchTermsReady();
-//   }
-// });
