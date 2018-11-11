@@ -2,12 +2,16 @@
 title: The Author
 ---
 
+{% include read-config.liquid %}
+
 <!-- --------------- -->
 <!-- The text for this page is found in `author-bio.md` -->
 <!-- The image for this page is found in `assets/images/author.png` -->
 <!-- --------------- -->
 
 {% capture blurb %}{% include_relative book-author-bio.md %}{% endcapture %}
+
+<hr/>
 
 <div class="row">
   <div class="col-md-4">
@@ -19,8 +23,8 @@ title: The Author
 </div>
 
 <!-- --------------- -->
-<!-- Edit the `book-copyright.md` file to suit your needs -->
+<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
 <!-- --------------- -->
 
 <hr/>
-{% include_relative book-copyright.md %}
+{{ config.metadata.copyright | markdownify }}

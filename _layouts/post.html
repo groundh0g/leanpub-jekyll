@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% include read-config.liquid %}
+
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -22,3 +25,10 @@ layout: default
 </article>
 
 {% include comments.liquid %}
+
+<!-- --------------- -->
+<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
+<!-- --------------- -->
+
+<hr/>
+{{ config.metadata.copyright | markdownify }}

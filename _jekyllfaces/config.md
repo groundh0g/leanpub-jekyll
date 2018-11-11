@@ -14,12 +14,13 @@ metadata:
     #jurisdiction: # e.g. Georgia, "United States" when blank
   lang: en
 
+  copyright: Powered by [leanpub-jekyll](https://github.com/groundh0g/leanpub-jekyll). All content &copy; [Joseph Barrett Hall](http://joehall.net) ([@groundh0g](https://twitter.com/groundh0g)).
+
 customize:
   theme: journal       # one of: cerulean | cosmo | cyborg | darkly | default | flatly | journal | litera | lumen | lux | materia | minty | pulse | sandstone | simplex | sketchy | slate | solar | spacelab | superhero | united | yeti
   http404: sticky     # one of: badge | default | dog | droids | glass | link | milk | monster | potty | shrug | sticky | tweet | zork
   #css: [ "main.css" ] # array of stylesheets to load after other styles
   #js:  [ "main.js"  ] # array of javascripts to load after other scripts
-
   #homepage: custom    # one of: books | contributors | custom | docs | landing | legal | soon | webapps
 
 build:

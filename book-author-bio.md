@@ -1,5 +1,3 @@
-### The Author
-
 Joseph Hall has been a professional software developer for more than 25 years. He worked as a programmer for Microsoft and IBM, he was the software architect for a Fortune 500 bank, he was the CTO of an online ticket sales and servicing company, and he started his own consulting company (Codetopia, LLC) in 2006.
 
 Joe makes his living writing desktop, web, and mobile device applications for businesses and governmental agencies, but game programming is his passion, and it was gaming that got him into programming in the first place. He was a member of the original Xbox team and he joined the Visual Studio .NET team just after the Xbox was released in 2001.

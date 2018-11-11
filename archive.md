@@ -3,11 +3,13 @@ layout: page
 title: Blog and News Archive
 ---
 
+{% include read-config.liquid %}
+
 This is the archive for the blog posts.
 
-<hr/>
-
 {% for post in site.posts limit:5 %}
+
+<hr/>
 
 ## {{ post.title }} <span style='font-size:0.5em;'>{{ post.date | date: "%B %d, %Y" }}</span>
   
@@ -15,15 +17,12 @@ This is the archive for the blog posts.
 
 [View Post &raquo;]({{ post.url | relative_url }})
 
-<hr/>
-
 {% endfor %}
 
 
 <!-- --------------- -->
-<!-- Edit the `manuscript/site-copyright.md` file to suit your needs -->
+<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
 <!-- --------------- -->
 
-{% include_relative book-copyright.md %}
-
-<script src='{{ "/assets/script/3rd-party/parallax.js" | relative_url }}'></script>
+<hr/>
+{{ config.metadata.copyright | markdownify }}

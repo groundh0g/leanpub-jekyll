@@ -2,10 +2,14 @@
 title: The Synopsis
 ---
 
+{% include read-config.liquid %}
+
 <!-- --------------- -->
 <!-- The text for this page is found in `book-synopsis-description.md` -->
 <!-- The image for this page is found in `manuscript/images/cover.png` -->
 <!-- --------------- -->
+
+<hr/>
 
 {% capture blurb %}{% include_relative book-synopsis-description.md %}{% endcapture %}
 
@@ -18,4 +22,9 @@ title: The Synopsis
   </div>
 </div>
 
+<!-- --------------- -->
+<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
+<!-- --------------- -->
+
 <hr/>
+{{ config.metadata.copyright | markdownify }}

@@ -3,6 +3,8 @@ layout: page
 title: Search Results
 ---
 
+{% include read-config.liquid %}
+
 <hr/>
 
 <div id="searchResultsDiv"></div>
@@ -71,9 +73,8 @@ title: Search Results
 </script>
 
 <!-- --------------- -->
-<!-- Edit the `book-copyright.md` file to suit your needs -->
+<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
 <!-- --------------- -->
 
-{% capture copy %}{% include_relative book-copyright.md %}{% endcapture %}
 <hr/>
-{{ copy | markdownify }}
+{{ config.metadata.copyright | markdownify }}
