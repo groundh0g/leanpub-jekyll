@@ -12,6 +12,6 @@
 
 {% for page in site.pages %}
   {% if chapterPaths contains page.path %}
-  {{ page.content | markdownify }}<hr/>
+  <hr/>{{ page.content | markdownify }}
   {% endif %}
 {% endfor %}
