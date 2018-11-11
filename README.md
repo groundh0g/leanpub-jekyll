@@ -138,6 +138,28 @@ navbar:
             desc: The GitHub project for this book.
 ~~~
 
+## Search
+
+Search is tricky to implement in Jekyll for newcomers. Leanpub-jekyll automatically indexes your content and makes it searchable from the navigation bar at the top of the site. Posts, chapters, statistics, author bio, ... everything can be included. Of course, it's also configurable.
+
+~~~
+search:
+  content:      full # one of: false | full | excerpt
+  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html", "/search.html" ]
+  strip_chars:  "|'.,:;!?├─└…()[]#-/“”{}’"
+  strip_quote:  true
+  titles:       true # search titles from pages and posts?
+  tags:         true # search post tags?
+  pages:        true # search all page content?
+  posts:        true # search all post content?
+
+  ## map content pages to hosting pages (the editable files to the display files)
+  pagemaps:
+    book-author-bio: book-author
+    book-manuscript-chapters: book-manuscript
+    book-synopsis-description: book-synopsis
+~~~
+
 ## Coming Soon
 
-The search, analytics, and comments features are being implemented next. Stay tuned!
+Analytics and comments are being implemented next. Stay tuned!
