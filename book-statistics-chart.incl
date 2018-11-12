@@ -46,11 +46,11 @@
   <td>&nbsp;</td>
   <td style="text-align:right;">&nbsp;{{ newCount }} words&nbsp;</td>
   <td>&nbsp;
-    <i title="stub - no content" class="fa fa-thumb-tack" {% if page.status != 'stub' %}style="color:#ccc;"{% else %}style="color:#22f; cursor:default;"{% endif %}></i>
-    <i title="placeholder - limited content" class="fa fa-file-o" {% if page.status != 'placeholder' %}style="color:#ccc;"{% else %}style="color:#22f; cursor:default;"{% endif %}></i>
-    <i title="draft - almost there" class="fa fa-file-text-o" {% if page.status != 'draft' %}style="color:#ccc;"{% else %}style="color:#22f; cursor:default;"{% endif %}></i>
-    <i title="edit - ready for edit" class="fa fa-pencil" {% if page.status != 'edit' %}style="color:#ccc;"{% else %}style="color:#22f; cursor:default;"{% endif %}></i>
-    <i title="done - ready for print" class="fa fa-check" {% if page.status != 'done' %}style="color:#ccc;"{% else %}style="color:#22f; cursor:default;"{% endif %}></i>&nbsp;&nbsp;</td>
+    <i title="stub - no content" class="fa fa-thumb-tack" {% if page.status != 'stub' %}style="color:#ccc;"{% else %}style="color:#44f; cursor:default;"{% endif %}></i>
+    <i title="placeholder - limited content" class="fa fa-file-o" {% if page.status != 'placeholder' %}style="color:#ccc;"{% else %}style="color:#44f; cursor:default;"{% endif %}></i>
+    <i title="draft - almost there" class="fa fa-file-text-o" {% if page.status != 'draft' %}style="color:#ccc;"{% else %}style="color:#44f; cursor:default;"{% endif %}></i>
+    <i title="edit - ready for edit" class="fa fa-pencil" {% if page.status != 'edit' %}style="color:#ccc;"{% else %}style="color:#44f; cursor:default;"{% endif %}></i>
+    <i title="done - ready for print" class="fa fa-check" {% if page.status != 'done' %}style="color:#ccc;"{% else %}style="color:#44f; cursor:default;"{% endif %}></i>&nbsp;&nbsp;</td>
   <td style="text-align:right; {% if twoWeekReview != true %}color:#bbb;{% endif %} {% if threeDayReview == true %}font-weight:bold;{% endif %}">&nbsp;{{ page.lastReviewedOn | date: '%B %d, %Y' }}</td>
 </tr>
 
