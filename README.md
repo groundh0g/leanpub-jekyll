@@ -15,14 +15,14 @@ The [Jekyll](https://jekyllrb.com/) plumbing has been added to wrap the `manuscr
 
 ## Techie Tweaks
 
-I made the following changes within the `manuscript` folder:
+Leanpub-jekyll adds the following pages / features to your manuscript project in Github:
 
-* I added a `manuscript/index.md` file to generate the page landing page for your site. This file will be ignored by Leanpub since it's not referenced by the `Book.txt` file.
-* I added a `manuscript/site-manuscript.md` file to stitch the book's chapters together into a single web page. This file will be ignored by Leanpub since it's not referenced by the `Book.txt` file.
+* The `/index.md` file to generates the landing page for your site.
+* The `manuscript/book-manuscript.md` file to stitches the book's chapters together into a single web page.
 * I renamed the chapter files from `*.txt` to `*.md` and updated the references to same within the `Book.txt` file.
-* I added YAML headers to each chapter. These help the site display separate chapters as separate web pages, and that header should be safely ignored by the Leanpub publishing process.
-* I added a fourth chapter with "lorem ipsum" text as a placeholder to help showcase the statistics page (at `manuscript/site-statistics.md`). The content of the chapter files doesn't matter. You'll replace all four chapters with your own text, and add new chapters after that.
-* I created a bogus, completely unrelated, book cover to show alongside the synopsis (in `manuscript/site-synopsis.md`). Consider it a placeholder for you to swap out for your own cover.
+* I added YAML headers to each chapter. These help the site display separate chapters as separate web pages (e.g. when navigating via search), and that header should be safely ignored by the Leanpub publishing process.
+* I added a fourth chapter with "lorem ipsum" text as a placeholder to help showcase the statistics page (at `/book-statistics.md`). The content of the chapter files doesn't matter. You'll replace all four chapters with your own text, and add new chapters after that.
+* I created a bogus, completely unrelated, book cover to show alongside the synopsis (in `/book-synopsis.md`). Consider it a placeholder for you to swap out with your own cover.
 
 ## Blogging
 

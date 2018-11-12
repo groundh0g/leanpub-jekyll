@@ -89,7 +89,7 @@ navbar:
 
 search:
   content:      full # one of: false | full | excerpt
-  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html", "/search.html" ]
+  ignore:       [ ".css", ".js", ".json", ".xml", "/404.html", "/custom.html", "/status.html", "/book-copyright.html", "/search.html", "/site.webmanifest" ]
   #groups:       [ "/content/contributors/", "/content/legal/" ]
   strip_chars:  "|'.,:;!?├─└…()[]#-/“”{}’"
   strip_quote:  true

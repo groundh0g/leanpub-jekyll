@@ -1,14 +1,19 @@
+---
+---
 {
+    {% assign path192 = "/android-chrome-192x192.png" | relative_url %}
+    {% assign path512 = "/android-chrome-512x512.png" | relative_url %}
+
     "name": "",
     "short_name": "",
     "icons": [
         {
-            "src": "/leanpub-jekyll/android-chrome-192x192.png",
+            "src": "{{ path192 }}",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/leanpub-jekyll/android-chrome-512x512.png",
+            "src": "{{ path512 }}",
             "sizes": "512x512",
             "type": "image/png"
         }
