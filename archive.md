@@ -7,7 +7,7 @@ title: Blog and News Archive
 
 This is the archive for the blog posts.
 
-{% for post in site.posts limit:5 %}
+{% for post in site.posts %}
 
 <hr/>
 
