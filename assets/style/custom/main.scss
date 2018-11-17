@@ -155,3 +155,8 @@ blockquote {
 blockquote strong {
   font-weight: bolder;
 }
+
+// fix for FB comment resize/full-width bug
+.fb_iframe_widget_lift, .fb_iframe_widget_fluid span, iframe.fb_ltr {
+  width: 100% !important;
+}

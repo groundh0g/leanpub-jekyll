@@ -1,7 +1,8 @@
 ---
+layout: chapter
 showTitle: false
 status: done # placeholder | stub | draft | edit | done
-lastReviewedOn: 2018-10-15
+lastReviewedOn: 2018-11-15
 ---
 
 # Chapter 3

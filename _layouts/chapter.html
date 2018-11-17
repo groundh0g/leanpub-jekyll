@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<article class="post">
+
+    <header class="post-header">
+        {% if page.title != "" and page.title != nil and page.showTitle != false %}
+        <h1 class="post-title">{{ page.title | escape }}</h1>
+        {% endif %}
+    </header>
+
+    <div class="post-content">
+        {{ content }}
+    </div>
+
+    <hr/>
+    <h3>Feedback, Comments, and Corrections</h3>
+    <div style="width: 100%;">{% include comments.liquid %}</div>
+</article>

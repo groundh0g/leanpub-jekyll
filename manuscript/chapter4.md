@@ -1,4 +1,5 @@
 ---
+layout: chapter
 showTitle: false
 status: placeholder # placeholder | stub | draft | edit | done
 lastReviewedOn: 2018-11-01
