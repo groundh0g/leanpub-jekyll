@@ -1,22 +1,146 @@
 ---
 ---
 
-/* Some vars */
-$background-color: hsl(50, 5, 97);
-$black: hsl(200, 40, 10);
-$white: $background-color;
-//$base-font-size: 2.4em;
-//$base-line-height: 1.5em;
-$base-font-size: 1.0em;
-$base-line-height: 1.2em;
+$body-padding-top: 90px;
+$quote-background-color: inherit;
+$quote-color: inherit;
+
+{% include read-config.liquid %}
+{% case config.customize.theme %}
+
+{% when 'cerulean' %}
+
+$status-color: #888;
+$status-color-active: #88f;
+
+{% when 'cosmo' %}
+
+$status-color: #888;
+$status-color-active: #88f;
+
+{% when 'cyborg' %}
+
+$status-color: #888;
+$status-color-active: #29d;
+
+{% when 'darkly' %}
+
+$status-color: #888;
+$status-color-active: #0b8;
+
+{% when 'flatly' %}
+
+$status-color: #bbb;
+$status-color-active: #88f;
+
+{% when 'journal' %}
+
+$status-color: #bbb;
+$status-color-active: #e66;
+
+{% when 'litera' %}
+
+$status-color: #888;
+$status-color-active: #88f;
+
+{% when 'lumen' %}
+
+$status-color: #888;
+$status-color-active: #88f;
+
+{% when 'lux' %}
+
+$status-color: #ccc;
+$status-color-active: #000;
+$body-padding-top: 120px;
+
+{% when 'materia' %}
+
+$status-color: #ccc;
+$status-color-active: #29f;
+$body-padding-top: 110px;
+
+{% when 'minty' %}
+
+$status-color: #ccc;
+$status-color-active: #7ca;
+
+{% when 'pulse' %}
+
+$status-color: #ccc;
+$status-color-active: #539;
+
+{% when 'sandstone' %}
+
+$status-color: #ccc;
+$status-color-active: #9c4;
+
+{% when 'simplex' %}
+
+$status-color: #ccc;
+$status-color-active: #d20;
+
+{% when 'sketchy' %}
+
+$status-color: #ccc;
+$status-color-active: #29f;
+
+{% when 'slate' %}
+
+$status-color: #888;
+$status-color-active: #fff;
+
+{% when 'solar' %}
+
+$status-color: inherit;
+$status-color-active: #2a9;
+
+{% when 'spacelab' %}
+
+$status-color: #ccc;
+$status-color-active: #29f;
+
+{% when 'superhero' %}
+
+$status-color: #ccc;
+$status-color-active: #d61;
+
+{% when 'united' %}
+
+$status-color: #ccc;
+$status-color-active: #e52;
+
+{% when 'yeti' %}
+
+$status-color: #ccc;
+$status-color-active: #29f;
+
+{% else %} // default
+
+$status-color: #888;
+$status-color-active: #88f;
+
+{% endcase %}
+
+
+.status {
+  color: $status-color;
+}
+
+.status-active {
+  color: $status-color-active;
+}
+
+body {
+  padding-top: $body-padding-top !important;
+}
+
 
 blockquote {
   position: relative;
   padding-left: 1em;
-  border-left: 0.2em solid lighten($black, 40%);
-  //font-family: 'Roboto', serif;
-  //font-size: $base-font-size;
-  line-height: $base-line-height;
+  border-left: 0.2em solid $status-color-active;
+  line-height: 1.2em;
   //font-weight: 100;
   //&:before, &:after {
   //  content: '\201C';
@@ -30,5 +154,4 @@ blockquote {
 
 blockquote strong {
   font-weight: bolder;
-  //color: red;
 }

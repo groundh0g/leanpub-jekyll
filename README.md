@@ -15,18 +15,18 @@ The [Jekyll](https://jekyllrb.com/) plumbing has been added to wrap the `manuscr
 
 ## Techie Tweaks
 
-Leanpub-jekyll adds the following pages / features to your manuscript project in Github:
+Leanpub-jekyll adds the following pages and features to your manuscript project in Github:
 
 * The `/index.md` file to generates the landing page for your site.
-* The `manuscript/book-manuscript.md` file to stitches the book's chapters together into a single web page.
+* The `/book-manuscript.md` file to stitches the book's chapters together into a single web page.
 * I renamed the chapter files from `*.txt` to `*.md` and updated the references to same within the `Book.txt` file.
 * I added YAML headers to each chapter. These help the site display separate chapters as separate web pages (e.g. when navigating via search), and that header should be safely ignored by the Leanpub publishing process.
 * I added a fourth chapter with "lorem ipsum" text as a placeholder to help showcase the statistics page (at `/book-statistics.md`). The content of the chapter files doesn't matter. You'll replace all four chapters with your own text, and add new chapters after that.
-* I created a bogus, completely unrelated, book cover to show alongside the synopsis (in `/book-synopsis.md`). Consider it a placeholder for you to swap out with your own cover.
+* I created a bogus, completely unrelated, book cover (at `/manuscript/images/cover.png`) to show alongside the synopsis (in `/book-synopsis.md`). Consider it a placeholder for you to swap out with your own cover.
 
 ## Blogging
 
-This is a standard Jekyll site. Blog posts are created a separate files in the `_posts` folder. For more information on creating blog posts in Jekyll, see the [official documentation](https://jekyllrb.com/docs/posts/), or check out the example posts that come with this project.
+This is a standard Jekyll site. Blog posts are created as separate files in the `_posts` folder. For more information on creating blog posts in Jekyll, see the [official documentation](https://jekyllrb.com/docs/posts/), or check out the example posts that come with this project.
 
 ## Configuration - Jekyll
 
