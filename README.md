@@ -163,7 +163,7 @@ search:
 
 ### Comments
 
-To emable comments on your chapters and other pages, you'll need to select a comment provider and specify the provider-provided ID that was assigned to you. You set these values in the `_jekyllfaces/config.md` file.
+To enable comments on your chapters and other pages, you'll need to select a comment provider and specify the provider-provided ID that was assigned to you. You set these values in the `_jekyllfaces/config.md` file.
 
 ~~~
 comments:
