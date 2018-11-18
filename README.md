@@ -30,10 +30,11 @@ This is a standard Jekyll site. Blog posts are created as separate files in the 
 
 ## Configuration - Jekyll
 
-Jekyll is typically configured by entries in the `_config.yml` file. This project moves almost all of that configuration data to the `_jekyllfaces\config.md` file. There's one exception, though. It was cleaner to leave the `baseurl` setting (the subpath) in the `_config.yml` file. That's because Jekyll has filters that help with formatting page URLs that rely on that setting.
+Jekyll is typically configured by entries in the `_config.yml` file. This project moves almost all of that configuration data to the `_jekyllfaces/config.md` file. There are two exceptions, though. It was cleaner to leave the `baseurl` setting (the subpath) and `url` setting (the protocol and hostname) in the `_config.yml` file. That's because Jekyll has filters that help with formatting page URLs that rely on those settings.
 
 ~~~
 baseurl: "/leanpub-jekyll" # the subpath of your site, e.g. /blog
+url: "https://groundh0g.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 ~~~
 
 If your site isn't hosted at the root, you'll need to set the `baseurl` value accordingly.
@@ -160,6 +161,23 @@ search:
     book-synopsis-description: book-synopsis
 ~~~
 
+### Comments
+
+To emable comments on your chapters and other pages, you'll need to select a comment provider and specify the provider-provided ID that was assigned to you. You set these values in the `_jekyllfaces/config.md` file.
+
+~~~
+comments:
+  provider: facebook # one of: false | facebook | disqus | intensedebate | duoshuo
+  siteid: 0000000000000000
+~~~
+
+**NOTE:** For Facebook comments (and possibly others), you'll also need to specify your `baseurl` and `url` settings in the `_config.yml` file.
+
+~~~
+baseurl: "/leanpub-jekyll" # the subpath of your site, e.g. /blog
+url: "https://groundh0g.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+~~~
+
 ## Coming Soon
 
-Analytics and comments are being implemented next. Stay tuned!
+Analytics are being implemented next. Stay tuned!

@@ -14,7 +14,9 @@ layout: default
         {{ content }}
     </div>
 
+    {% if config.comments.provider != "" and config.comments.provider != nil %}
     <hr/>
     <h3>Feedback, Comments, and Corrections</h3>
-    <div style="width: 100%;">{% include comments.liquid %}</div>
+    {% include comments.liquid %}
+    {% endif %}
 </article>
