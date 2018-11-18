@@ -191,4 +191,4 @@ analytics:
 
 ## Feature Requests and Bug Fixes
 
-Analytics are being implemented next. Stay tuned!
+That's about all there is to tell. If you have a feature that you would like added, or if you find a problem with the existing code, please [open an issue and tell us about it](https://github.com/groundh0g/leanpub-jekyll/issues).
