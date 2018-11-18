@@ -21,4 +21,11 @@ layout: default
     <h3>Feedback, Comments, and Corrections</h3>
     {% include comments.liquid %}
     {% endif %}
+
+    <!-- --------------- -->
+    <!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
+    <!-- --------------- -->
+
+    <hr/>
+    {{ config.metadata.copyright | markdownify }}
 </article>

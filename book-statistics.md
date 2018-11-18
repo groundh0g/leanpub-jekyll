@@ -12,9 +12,3 @@ If you're the kind of person that likes statistics, here's the current status of
 
 My goal is 50,000 words, so you can see that I have quite a bit more to write.
 
-<!-- --------------- -->
-<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
-<!-- --------------- -->
-
-<hr/>
-{{ config.metadata.copyright | markdownify }}

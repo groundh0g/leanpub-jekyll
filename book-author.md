@@ -22,9 +22,3 @@ title: The Author
   </div>
 </div>
 
-<!-- --------------- -->
-<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
-<!-- --------------- -->
-
-<hr/>
-{{ config.metadata.copyright | markdownify }}

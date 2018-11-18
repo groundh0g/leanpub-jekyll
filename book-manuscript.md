@@ -20,10 +20,3 @@ This is the latest draft of the book. Edits may not be complete, so expect error
 
 {% include_relative book-manuscript-chapters.incl %}
 
-
-<!-- --------------- -->
-<!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
-<!-- --------------- -->
-
-<hr/>
-{{ config.metadata.copyright | markdownify }}

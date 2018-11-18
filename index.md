@@ -21,6 +21,11 @@ Welcome to the website for my book-in-progress. The most recent blog posts are l
 
 {% endfor %}
 
+{% if config.comments.provider %}
+<hr/>
+{% include comments.liquid %}
+{% endif %}
+
 <!-- --------------- -->
 <!-- Edit the `metadata.copyright` value in the `_jekyllfaces/config.md` file to suit your needs. -->
 <!-- --------------- -->
