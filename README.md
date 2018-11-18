@@ -178,6 +178,17 @@ baseurl: "/leanpub-jekyll" # the subpath of your site, e.g. /blog
 url: "https://groundh0g.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 ~~~
 
-## Coming Soon
+### Analytics
+
+To enable analytics on your pages, you'll need to select an analytics provider and specify the provider-provided ID that was assigned to you. You set these values in the `_jekyllfaces/config.md` file.
+
+~~~
+analytics:
+  provider: false # one of: false | google | matomo | getclicky | mixpanel | gauges 
+  siteid: UA-0000000-00
+  baseurl: # only used by matomo; ex: mysite.com/piwik
+~~~
+
+## Feature Requests and Bug Fixes
 
 Analytics are being implemented next. Stay tuned!
